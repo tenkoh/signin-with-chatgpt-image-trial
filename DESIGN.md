@@ -37,7 +37,7 @@ Environment (all optional):
 | ---------------- | ------------- | ----------------------------------------------------------------- |
 | `SIWC_PORT`      | `1455`        | loopback port, which becomes part of `redirect_uri`               |
 | `SIWC_STATE_DIR` | `~/.siwc-poc` | location of `registration.json` (host id + issued client_id only) |
-| `SIWC_MODEL`     | `gpt-5`       | model for both probes                                             |
+| `SIWC_MODEL`     | `gpt-5.6-sol` | model for both probes                                             |
 
 Only two things are written to disk: `ext_agent_host_id` and the issued `oaiapp_…` client_id. Tokens live in process memory and are gone on restart. That is intentional, because the PoC has no session or history.
 

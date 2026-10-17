@@ -29,7 +29,7 @@ export function loadConfig(env: NodeJS.ProcessEnv): Config {
   return {
     port: parsePort(env.SIWC_PORT ?? '1455'),
     stateDir: resolveStateDir(env.SIWC_STATE_DIR),
-    model: env.SIWC_MODEL?.trim() ? env.SIWC_MODEL.trim() : 'gpt-5',
+    model: env.SIWC_MODEL?.trim() ? env.SIWC_MODEL.trim() : 'gpt-5.6-sol',
     agentName: 'SIWC Image PoC',
     issuer,
     authorizeUrl: `${issuer}/api/accounts/authorize`,

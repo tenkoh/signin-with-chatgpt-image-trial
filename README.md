@@ -45,7 +45,7 @@ pnpm format:check
 | ---------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | `SIWC_PORT`      | `1455`        | Loopback port. The redirect URI uses this port. Set it in the environment of `pnpm dev` so Vite proxies to the same port. |
 | `SIWC_STATE_DIR` | `~/.siwc-poc` | Directory for `registration.json`.                                                                                        |
-| `SIWC_MODEL`     | `gpt-5`       | Model name sent on both probes.                                                                                           |
+| `SIWC_MODEL`     | `gpt-5.6-sol` | Model name sent on both probes.                                                                                           |
 
 `registration.json` stores this machine's host id and, after the first sign-in, the issued client id. The file mode is `0600`. The first authorization uses `client_id=dynamic_agent_client` and `agent_name_hint=SIWC Image PoC`. Later sign-ins reuse the issued client id.
 
