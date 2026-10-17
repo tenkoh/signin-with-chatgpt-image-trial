@@ -4,7 +4,6 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently -k -n server,web -c blue,green \"pnpm --filter server dev\" \"pnpm --filter web dev\"",
-    "build": "pnpm --filter server build && pnpm --filter web build",
     "test": "pnpm --filter server test",
     "lint": "oxlint .",
     "lint:fix": "oxlint --fix .",

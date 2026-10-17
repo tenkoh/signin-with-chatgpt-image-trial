@@ -8,15 +8,13 @@ function statusLabel(status: ReturnType<typeof useStatus>['status']): string {
     case 'signed_out':
       return 'Signed out';
     case 'pending':
-      return 'Waiting for browser consent…';
+      return 'Waiting for the browser sign-in to finish.';
     case 'signed_in':
       return `Signed in${status.email ? ` as ${status.email}` : ''}${
         status.planType ? ` (${status.planType})` : ''
-      }`;
-    case 'plan_disabled':
-      return `Signed in${status.email ? ` as ${status.email}` : ''}, plan usage not granted`;
+      }. Access token expires in ${status.expiresInSec}s.`;
     case 'failed':
-      return `Failed: ${status.error}${status.detail ? ` — ${status.detail}` : ''}`;
+      return `Failed: ${status.error}${status.detail ? ` (${status.detail})` : ''}.`;
   }
 }
 
@@ -63,20 +61,18 @@ export function App() {
         {summary}
       </p>
       <div className="row">
-        {status.auth === 'signed_out' ||
-        status.auth === 'failed' ||
-        status.auth === 'plan_disabled' ||
-        status.auth === 'pending' ? (
+        {status.auth !== 'signed_in' ? (
           <button
             type="button"
+            disabled={status.auth === 'pending'}
             onClick={() => {
               void api.startSignIn().then(refresh);
             }}
           >
-            Continue with ChatGPT
+            {status.auth === 'pending' ? 'Sign-in in progress' : 'Sign in with ChatGPT'}
           </button>
         ) : null}
-        {status.auth === 'signed_in' || status.auth === 'plan_disabled' ? (
+        {status.auth === 'signed_in' ? (
           <button
             type="button"
             className="secondary"
