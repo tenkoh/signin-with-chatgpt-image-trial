@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.DS_Store
+.env
+.env.*
+*.log
+*.tsbuildinfo
+.vite/
+.siwc-poc/
+registration.json
+pnpm-debug.log*
