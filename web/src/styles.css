@@ -1,0 +1,151 @@
+:root {
+  color-scheme: light;
+  --ink: #1a1a1a;
+  --muted: #5c5c5c;
+  --line: #d8d4cc;
+  --bg: #f3efe6;
+  --panel: #fffdf8;
+  --pass: #1b6b3a;
+  --fail: #8a1f1f;
+  --warn: #8a5a00;
+  --accent: #0b3d5c;
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #e7f0f7 0%, transparent 55%),
+    radial-gradient(900px 500px at 100% 0%, #f7e9d8 0%, transparent 50%), var(--bg);
+}
+
+main {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+h1 {
+  font-family: 'IBM Plex Serif', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.lede {
+  color: var(--muted);
+  margin: 0 0 1.75rem;
+  max-width: 42rem;
+  line-height: 1.45;
+}
+
+.summary {
+  font-size: 1.05rem;
+  line-height: 1.4;
+  margin: 0 0 1.5rem;
+  padding: 0.9rem 1rem;
+  background: var(--panel);
+  border-left: 4px solid var(--accent);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+button {
+  font: inherit;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: #fff;
+  padding: 0.55rem 0.95rem;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: transparent;
+  color: var(--ink);
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.status {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.probes {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 760px) {
+  .probes {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  padding: 1rem;
+  min-height: 12rem;
+}
+
+.card h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.verdict {
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin: 0 0 0.35rem;
+}
+
+.verdict.pass {
+  color: var(--pass);
+}
+
+.verdict.unsupported {
+  color: var(--warn);
+}
+
+.verdict.auth_failed,
+.verdict.error {
+  color: var(--fail);
+}
+
+.reason {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+pre,
+details {
+  font-size: 0.8rem;
+  overflow: auto;
+  max-height: 12rem;
+}
+
+img.result {
+  max-width: 100%;
+  border: 1px solid var(--line);
+}

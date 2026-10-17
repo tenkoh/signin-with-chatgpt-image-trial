@@ -1,0 +1,14 @@
+{
+  "httpStatus": 403,
+  "errorBody": {
+    "error": {
+      "message": "This route does not support the requested tool.",
+      "type": "invalid_request_error",
+      "code": "route_not_supported"
+    }
+  },
+  "events": [],
+  "outputText": "",
+  "images": [],
+  "durationMs": 20
+}
