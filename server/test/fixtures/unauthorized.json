@@ -1,0 +1,8 @@
+{
+  "httpStatus": 401,
+  "errorBody": { "error": { "message": "Unauthorized", "code": "invalid_api_key" } },
+  "events": [],
+  "outputText": "",
+  "images": [],
+  "durationMs": 12
+}

@@ -1,0 +1,21 @@
+{
+  "httpStatus": 200,
+  "events": [
+    {
+      "type": "response.failed",
+      "data": {
+        "type": "response.failed",
+        "response": {
+          "error": {
+            "code": "subscription_sharing_route_not_supported",
+            "message": "Image generation is not supported on this route."
+          }
+        }
+      }
+    }
+  ],
+  "terminal": "response.failed",
+  "outputText": "",
+  "images": [],
+  "durationMs": 30
+}

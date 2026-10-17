@@ -1,0 +1,11 @@
+{
+  "httpStatus": 200,
+  "events": [
+    { "type": "response.output_item.done", "data": { "type": "response.output_item.done" } },
+    { "type": "response.completed", "data": { "type": "response.completed" } }
+  ],
+  "terminal": "response.completed",
+  "outputText": "",
+  "images": [{ "b64": "AAAA", "mime": "image/png" }],
+  "durationMs": 40
+}
